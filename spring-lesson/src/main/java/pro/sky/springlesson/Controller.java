@@ -20,19 +20,41 @@ public class Controller {
         return calculService.hello();
     }
     @GetMapping("/plus")
-    public String plus(@RequestParam ("num1") int num1, @RequestParam ("num2") int num2){
+    public String plus(@RequestParam(value = "num1", required = false) Integer num1,
+                       @RequestParam(value = "num2", required = false) Integer num2
+    ) {
+        if (num1 == null || num2 == null) {
+            return "Не хвататет аргементов";
+        }
         return calculService.plus(num1, num2);
     }
     @GetMapping("/minus")
-    public String minus(@RequestParam ("num1") int num1, @RequestParam ("num2") int num2){
+    public String minus(@RequestParam(value = "num1", required = false) Integer num1,
+                        @RequestParam(value = "num2", required = false) Integer num2
+    ) {
+        if (num1 == null || num2 == null) {
+            return "Не хвататет аргементов";
+        }
         return calculService.minus(num1, num2);
     }
     @GetMapping("/multiply")
-    public String multiply(@RequestParam ("num1") int num1, @RequestParam ("num2") int num2){
+    public String multiply(@RequestParam(value = "num1", required = false) Integer num1,
+                           @RequestParam(value = "num2", required = false) Integer num2
+    ) {
+        if (num1 == null || num2 == null) {
+            return "Не хвататет аргементов";
+        }
         return calculService.multiply(num1, num2);
     }
     @GetMapping("/divide")
-    public String divide(@RequestParam ("num1") double num1, @RequestParam ("num2") double num2){
+    public String divide(
+            @RequestParam(value = "num1", required = false) Integer num1,
+            @RequestParam(value = "num2", required = false) Integer num2
+    ) {
+        if (num1 == null || num2 == null) {
+            return "Не хвататет аргементов";
+        }
+
         return calculService.divide(num1, num2);
     }
 }
