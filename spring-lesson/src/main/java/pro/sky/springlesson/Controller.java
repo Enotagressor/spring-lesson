@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class Controller {
 private final CalculService calculService;
+
     public Controller(CalculService calculService){
         this.calculService = calculService;
     }
