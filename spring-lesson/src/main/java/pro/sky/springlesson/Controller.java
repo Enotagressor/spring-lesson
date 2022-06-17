@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/calculator")
 
 public class Controller {
-private final CalculService calculService;
-    public Controller(CalculService calculService){
+    private final pro.sky.springlesson.CalculService calculService;
+
+    public Controller(pro.sky.springlesson.CalculService calculService){
         this.calculService = calculService;
     }
+
     @GetMapping()
     public String hello(){
         return calculService.hello();
@@ -34,4 +36,5 @@ private final CalculService calculService;
         return calculService.divide(num1, num2);
     }
 }
+
 
