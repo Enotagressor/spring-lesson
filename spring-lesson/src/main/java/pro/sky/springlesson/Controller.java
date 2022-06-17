@@ -13,7 +13,6 @@ private final CalculService calculService;
     public Controller(CalculService calculService){
         this.calculService = calculService;
     }
-
     @GetMapping()
     public String hello(){
         return calculService.hello();
